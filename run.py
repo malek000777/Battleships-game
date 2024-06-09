@@ -26,7 +26,7 @@ def is_valid_guess(guess, size, guessed_cells):
     x, y = guess
     return (0 <= x < size) and (0 <= y < size) and (guess not in guessed_cells)
 
-    
+   
 # Function for computer's guess
 def computer_guess(size, guessed_cells):
     x = random.randint(0, size - 1)
@@ -37,7 +37,7 @@ def computer_guess(size, guessed_cells):
     return x, y
 
 
-    # Define default names
+# Define default names
 computer_name = "Computer"
 player_name = "Player"
 
@@ -51,8 +51,8 @@ def play_battleships(grid_size, num_ships):
     computer_wins = 0
     attempts = 0
 
-    player_name = input("Enter your name: ")
-    computer_name = input("Enter the computer's name: ")
+    player_name = input("Enter your name:\n")
+    computer_name = input("Enter the computer's name:\n")
     print("Welcome, {}! Let's play Battleships against Computer_ {}!"
           .format(player_name, computer_name))
     print_grid(grid)
@@ -60,7 +60,7 @@ def play_battleships(grid_size, num_ships):
     while attempts < 5:  # Max 5 attempts
         # Player's turn
         while True:
-            guess = input("Enter your guess (row column): ").split()
+            guess = input("Enter your guess (row column):\n").split()
             if len(guess) != 2:
                 print("Please enter row and column numbers.")
                 continue
@@ -120,7 +120,7 @@ def play_battleships(grid_size, num_ships):
     print("{}'s Wins: {}".format(computer_name, computer_wins))
 
     # Ask if user wants to play again
-    play_again = input("Do you want to play again? (yes/no): ")
+    play_again = input("Do you want to play again? (yes/no):\n")
     if play_again.lower() == 'yes':
         play_battleships(grid_size, num_ships)
     else:
