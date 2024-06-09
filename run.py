@@ -22,3 +22,13 @@ def place_battleships(grid, num_ships):
 def is_valid_guess(guess, size, guessed_cells):
     x, y = guess
     return (0 <= x < size) and (0 <= y < size) and (guess not in guessed_cells)
+
+    
+# Function for computer's guess
+def computer_guess(size, guessed_cells):
+    x = random.randint(0, size - 1)
+    y = random.randint(0, size - 1)
+    while (x, y) in guessed_cells:
+        x = random.randint(0, size - 1)
+        y = random.randint(0, size - 1)
+    return x, y
