@@ -125,3 +125,9 @@ def play_battleships(grid_size, num_ships):
         play_battleships(grid_size, num_ships)
     else:
         print("Goodbye, {}!".format(player_name))
+
+
+# Start the game
+grid_size = 5
+num_ships = 3
+play_battleships(grid_size, num_ships)
